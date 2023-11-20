@@ -1,3 +1,6 @@
+using Allure.Commons;
+using NUnit.Allure.Attributes;
+using NUnit.Allure.Core;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using WebDriverManager;
@@ -5,7 +8,9 @@ using WebDriverManager.DriverConfigs.Impl;
 
 namespace Google
 {
-    [TestFixture]
+    [TestFixture(Author = "unickq", Description = "Examples")]
+    [AllureNUnit]
+    [AllureLink("https://github.com/allure-framework/allure-csharp")]
     public class Tests
     {
         private IWebDriver _webDriver;
@@ -25,6 +30,10 @@ namespace Google
         }
 
         [Test]
+        [AllureTag("NUnit", "Debug")]
+        [AllureIssue("GitHub#1", "https://github.com/allure-framework/allure-csharp")]
+        [AllureSeverity(SeverityLevel.critical)]
+        [AllureFeature("Core")]
         public void Test1()
         {
             _webDriver.Navigate().GoToUrl("https://www.google.com");
