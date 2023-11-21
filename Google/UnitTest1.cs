@@ -40,5 +40,16 @@ namespace Google
             _webDriver.Navigate().GoToUrl("https://www.google.com");
             Assert.True(_webDriver.Title.Contains("Google"));
         }
+
+        [Test]
+        [AllureTag("NUnit", "Debug")]
+        [AllureIssue("GitHub#1", "https://github.com/allure-framework/allure-csharp")]
+        [AllureSeverity(SeverityLevel.critical)]
+        [AllureFeature("Core")]
+        public void Test123()
+        {
+            _webDriver.Navigate().GoToUrl("https://www.google.com");
+            Assert.True(_webDriver.Title.Contains("Google"));
+        }
     }
 }
